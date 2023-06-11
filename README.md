@@ -1,6 +1,9 @@
 # Spotify Recommender Project
 ---
 By William Lopez, E-mail: williamlopez9449@gmail.com
+
+<img src="./figures/EastCoast_HH_Artists.png" style="float: center; margin: 100px; width: 1200px"/>
+
 ## Table of Contents
 ---
 1. [Data Collection](https://github.com/WillLopez6/spotify_recommender/blob/main/code/Data_Collection.ipynb)
@@ -84,13 +87,26 @@ Below we can see the distribution of music released throughout the years and how
 <img src="./figures/Release_Year_Analysis.png" style="float: center; margin: 100px; width: 1200px"/>
 
 
+Lastly, we looked at some genre analysis. Spotify provides a list of different genres/subgenres for each song so something that I noticed is that oftentimes songs in the same genre like rock will have other genres attached to it like 'metal', 'hard-rock', etc. What I did in this step was split the string and look at the repetition of values for the genres to see which were the most popular. I would like to point out that I manually inspected some of the data and there are indie bands that are also considered pop which I feel might be an issues, especially when trying to analyze the genres.
+
+
+<img src="./figures/Top_15_Genres.png" style="float: center; margin: 100px; width: 1200px"/>
+
+
 
 
 ## Modeling
 --- 
+The objective of this recommender model is to recommend similar songs based on a variaety of features such as popularity, energy, daceability, instrumentalness, speechiness, etc. What we are trying to achieve is to retrieve songs by the same artist, album, or from artists within the same genre and release year. The data used has been label 'songs' and it comes from the <code>../data/clean_data.csv</code> file. The data is preprocessed using RegEx and the TFIDF Vectorizer to remove any special characters. The recommendation function of the model provides us with the Track, Artist, Album Title, Release Year and the Thumbnail. In the code notebook the thumbnail does not serve a purpose, this is directed towards the Streamlit app we created which shows us the thumbnail of the album along with the other give information. Additionally the code can be extended to include additional features when making recommendations for example we can include the popularity of the song or the energy if we want to see the tempo for the song. Ideally I would have liked to incorporate the genre but since Spotify provides a compilation of genres per song the output was rather messy and hard to understand, not only that but it also caused the output in the Streamlit app to look cluttered and unorganized.
+
+
 ## Streamlit App
 ---
-Here is the [link](https://drive.google.com/drive/folders/1L-QhSbuvlB0AAAa56lZYakKxheycvi2m?usp=sharing) to the streamlit application code along with the pickle file that was used.
+In the Streamlit App we use the recommender model to print out the 10 most similar songs. From the modeling code we can use special characters or ignore them if we'd like. Additionally there is an added feature that allows the user to print out 5 random songs from the dataset in case they want to discover something new or if the user is unsure on what they want to listen to that is a good way to possibly discover something new or maybe even a forgotten gem.
 
-If there are any issues please feel free to reach out to me via email provided above.
+Here is the [link](https://drive.google.com/drive/folders/1L-QhSbuvlB0AAAa56lZYakKxheycvi2m?usp=sharing) to the streamlit application code along with the pickle file that was used for it.
+
+If there are any issues please feel free to reach out to me via email provided at the beginning of the readme.
 ## Conclusions / Recommendations
+---
+Based on the two predictions above we received failry similar music recommendations. We can see that searching for an Artist will return anything related to that artist, or something similar. Additionally, we are able to search for a song and an artist and the recommender will return artists within the same genre and similar release years. We know that Spotify does well with their suggestion systems and it is a good way to find a variety of music from different time eras as well as sub-genres and artists. Something that could help improve the Spotify system would be having a main genre and a separate sub-genre section that way it is easier to classify songs using a main genre and then looking at sub-genres to get even more accurate recommendations.
