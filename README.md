@@ -6,11 +6,12 @@ By William Lopez, E-mail: williamlopez9449@gmail.com
 
 ## Table of Contents
 ---
+This repository contains the following notebooks:
 1. [Data Collection](https://github.com/WillLopez6/spotify_recommender/blob/main/code/Data_Collection.ipynb)
 2. [Data Cleaning](https://github.com/WillLopez6/spotify_recommender/blob/main/code/Data_Cleaning.ipynb)
 3. [Exploratory Data Analysis](https://github.com/WillLopez6/spotify_recommender/blob/main/code/EDA_Notebook.ipynb)
 4. [Modeling](https://github.com/WillLopez6/spotify_recommender/blob/main/code/Modeling_Recommender.ipynb)
-5. [Streamlit Spotify App](https://drive.google.com/drive/folders/1L-QhSbuvlB0AAAa56lZYakKxheycvi2m?usp=sharing)
+5. [Streamlit Spotify App](https://drive.google.com/drive/folders/1L-QhSbuvlB0AAAa56lZYakKxheycvi2m?usp=sharing) (External Link)
 ## Problem Statement
 ---
 Recently, Spotify has decided to try and improve the recommendation system used by their current app by implementing something that is more content-based. As a data scientist I was hired to create a recommender that recommends songs based on Artist and Song Title, additionally I am to include a similar time frame for the release year of the song. Spotify requested that I focus on song features like Danceability, Instrumentalness, Popularity of the song, etc. The goal is to improve the listener experience to make the application more appealing than other competitors like Apple Music and TIDAL by creating a model that analyzes the characteristics of the tracks and creates more niche recommendations that enhance the user experience.
@@ -30,6 +31,7 @@ The directory <code>../code</code> contains 4 notebooks that compose the project
         
 ## Software/Library Requirements
 ---
+Below are the libraries that were used for this project:
 1. Pandas
 2. Numpy
 3. Matplotlib
